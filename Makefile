@@ -1,19 +1,22 @@
-bin = ./node_modules/.bin
+REPORTER ?= dot
 
-coffee = $(bin)/coffee
-mocha = $(bin)/mocha
+coffee = ./node_modules/.bin/coffee
+mocha = ./node_modules/.bin/mocha --reporter $(REPORTER)
 
-test: test-int
-test-all: test-unit test-int
-
-test-unit: pretest
-	$(mocha) test/unit/*.coffee
-
-test-int: pretest
-	$(mocha) test/int/*.coffee
-
-pretest:
+build:
+ifndef CI
 	npm install
 	$(coffee) -co lib/ src/
+endif
 
-.PHONY: src test test-all test-int test-unit
+test: test-int
+
+test-all: test-unit test-int
+
+test-int: build
+	$(mocha) test/int/*.coffee
+
+test-unit: build
+	$(mocha) test/unit/*.coffee
+
+.PHONY: build test test-all test-int test-unit

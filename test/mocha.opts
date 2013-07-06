@@ -1,5 +1,5 @@
 --check-leaks
 --compilers coffee:coffee-script
---reporter spec
+--reporter dot
 --require test/common.coffee
 --ui bdd
