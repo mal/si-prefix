@@ -26,7 +26,7 @@ var units = {
     candela: new Unit(scale, 'cd'),
 
     // memory
-    bytes: new Unit(new Scale.Binary, 'B'),
+    byte: new Unit(new Scale.Binary, 'B'),
 
     // unofficial
 
@@ -35,7 +35,7 @@ var units = {
 };
 
 // memory (decimal)
-units.bytes.decimal = new Unit(new Scale({
+units.byte.decimal = new Unit(new Scale({
     below: false
 }), 'B');
 

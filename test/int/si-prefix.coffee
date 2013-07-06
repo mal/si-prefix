@@ -23,8 +23,8 @@ describe 'si-prefix', ->
       si.should.have.property 'candela'
 
     it 'should expose semi-official si units', ->
-      si.should.have.property 'bytes'
-      si.bytes.should.have.property 'decimal'
+      si.should.have.property 'byte'
+      si.byte.should.have.property 'decimal'
 
     it 'should expose some unofficial si units', ->
       si.should.have.property 'litre'
@@ -52,18 +52,18 @@ describe 'si-prefix', ->
   check 'mole', 'mol'
   check 'candela', 'cd'
 
-  describe 'bytes', ->
+  describe 'byte', ->
 
     it 'should handle a few basic formats', ->
-      si.bytes.format(12544).should.equal '12.25KiB'
-      si.bytes.format(0.0938).should.equal '0.0938B'
-      si.bytes.format(157).should.equal '157B'
+      si.byte.format(12544).should.equal '12.25KiB'
+      si.byte.format(0.0938).should.equal '0.0938B'
+      si.byte.format(157).should.equal '157B'
 
-  describe 'bytes (decimal)', ->
+  describe 'byte (decimal)', ->
 
     it 'should handle a few basic formats', ->
-      si.bytes.decimal.format(12446).should.equal '12.446kB'
-      si.bytes.decimal.format(0.0938).should.equal '0.0938B'
-      si.bytes.decimal.format(157).should.equal '157B'
+      si.byte.decimal.format(12446).should.equal '12.446kB'
+      si.byte.decimal.format(0.0938).should.equal '0.0938B'
+      si.byte.decimal.format(157).should.equal '157B'
 
   check 'litre', 'l'

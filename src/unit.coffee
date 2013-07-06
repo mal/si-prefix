@@ -9,12 +9,12 @@ module.exports = class Unit
     @limit = Object.keys(si).sort(sub).shift()
 
   format: (value, separator = '') ->
-    @factor(value).join separator
+    @convert(value).join separator
 
   suffix: (value) ->
-    @factor(value)[1]
+    @convert(value)[1]
 
-  factor: (value) ->
+  convert: (value) ->
     sign = value / value = abs value
     exp = max @limit, floor log(value) / @baseln
     while exp not of @si and exp > @limit
