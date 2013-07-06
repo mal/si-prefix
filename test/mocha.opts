@@ -1,0 +1,5 @@
+--check-leaks
+--compilers coffee:coffee-script
+--reporter spec
+--require test/common.coffee
+--ui bdd

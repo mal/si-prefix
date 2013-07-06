@@ -7,8 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "pretest": "./node_modules/.bin/coffee -co lib/ src/",
-    "test": "./node_modules/.bin/mocha"
+    "test": "make test-all"
   },
   "repository": {
     "type": "git",
