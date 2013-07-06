@@ -1,0 +1,62 @@
+{
+  "name": "si-prefix",
+  "version": "0.0.0",
+  "description": "SI and IEC compatible numeric formatter",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "./node_modules/.bin/coffee -co lib/ src/",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mal/si-prefix"
+  },
+  "bugs": {
+    "url": "https://github.com/mal/si-prefix/issues"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.12.0",
+    "chai": "~1.7.2"
+  },
+  "keywords": [
+    "SI prefix",
+    "human readable",
+    "binary",
+    "SI",
+    "IEC",
+    "yocto",
+    "zepto",
+    "atto",
+    "femto",
+    "pico",
+    "nano",
+    "micro",
+    "milli",
+    "centi",
+    "deci",
+    "deca",
+    "hecto",
+    "kilo",
+    "mega",
+    "giga",
+    "tera",
+    "peta",
+    "exa",
+    "zetta",
+    "yotta",
+    "kibi",
+    "mebi",
+    "gibi",
+    "tebi",
+    "pebi",
+    "exbi",
+    "zebi",
+    "yobi"
+  ],
+  "author": "Mal Graty <mal.graty@googlemail.com>",
+  "license": "MIT"
+}
