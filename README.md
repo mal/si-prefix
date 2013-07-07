@@ -57,4 +57,5 @@ Other ways you can customise units include changing the prefixes, removing some 
 ## Upcoming
 
   * Separate flags for hecto, deca, deci and centi
+  * Option to switch between `mc` and `µ` for micro prefix
   * Other stuff? File issues if you got 'em!
