@@ -65,6 +65,9 @@ describe 'unit class', ->
       unit.convert(1e-6).should.eql [ 1, 'mc_' ]
       unit.convert(1e-9).should.eql [ 1, 'n_' ]
 
+    it 'should work with Infinity', ->
+      unit.convert(Infinity).should.eql [ Infinity, '_']
+
   describe 'when using binary scale', ->
 
     unit = null
@@ -106,3 +109,6 @@ describe 'unit class', ->
     it 'should work with zero exponent', ->
       unit.convert(1).should.eql [ 1, '_' ]
       unit.convert(1023).should.eql [ 1023, '_' ]
+
+    it 'should work with Infinity', ->
+      unit.convert(Infinity).should.eql [ Infinity, '_']
