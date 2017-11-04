@@ -30,6 +30,16 @@ describe 'unit class', ->
       Object.defineProperty dec, 'base', value: 1000
       unit = new Unit dec, '_'
 
+    it 'should work with zero', ->
+      unit.convert(0).should.eql [ 0, '_' ]
+      unit.convert(-0).should.eql [ -0, '_' ]
+
+    it 'should work with non-finite numerics', ->
+      unit.convert(Infinity).should.eql [ Infinity, '_' ]
+      out = unit.convert(NaN)
+      isNaN(out[0]).should.eql true
+      out[1].should.eql '_'
+
     it 'should work with exact exponents', ->
       unit.convert(1e9).should.eql [ 1, 'G_' ]
       unit.convert(1e6).should.eql [ 1, 'M_' ]
@@ -73,6 +83,16 @@ describe 'unit class', ->
       bin = 30: 'G', 20: 'M', 10: 'K', 0: ''
       Object.defineProperty bin, 'base', value: 2
       unit = new Unit bin, '_'
+
+    it 'should work with zero', ->
+      unit.convert(0).should.eql [ 0, '_' ]
+      unit.convert(-0).should.eql [ -0, '_' ]
+
+    it 'should work with non-finite numerics', ->
+      unit.convert(Infinity).should.eql [ Infinity, '_' ]
+      out = unit.convert(NaN)
+      isNaN(out[0]).should.eql true
+      out[1].should.eql '_'
 
     it 'should work with exact exponents', ->
       unit.convert(1073741824).should.eql [ 1, 'G_' ]

@@ -15,6 +15,8 @@ module.exports = class Unit
     @convert(value)[1]
 
   convert: (value) ->
+    unless value and isFinite value
+      return [value, @si[0] + @unit]
     sign = value / value = abs value
     exp = max @limit, floor log(value) / @baseln
     while exp not of @si and exp > @limit
