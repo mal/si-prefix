@@ -6,7 +6,7 @@ module.exports = class Unit
 
   constructor: (@si, @unit) ->
     @baseln = log @si.base
-    @limit = Object.keys(si).sort(sub).shift()
+    @limit = Object.keys(@si).sort(sub).shift()
 
   format: (value, separator = '') ->
     @convert(value).join separator
